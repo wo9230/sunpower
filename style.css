@@ -88,7 +88,6 @@ body {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     color: #1a1a1a;
     padding: 140px 0 100px;
-    text-align: left;
     position: relative;
     overflow: hidden;
 }
@@ -104,10 +103,29 @@ body {
     opacity: 0.3;
 }
 
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 600px;
+}
+
+.hero-image {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
 .hero h1 {
@@ -220,6 +238,27 @@ body {
     margin-bottom: 20px;
     color: #1a1a1a;
     letter-spacing: -0.3px;
+}
+
+/* Card Images */
+.card-image {
+    margin-bottom: 24px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.overview-card:hover .card-img,
+.spec-card:hover .card-img,
+.diy-card:hover .card-img,
+.resource-card:hover .card-img {
+    transform: scale(1.05);
 }
 
 /* Cards - SunPower Style */
@@ -648,6 +687,16 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .hero-img {
+        height: 300px;
+    }
+    
     .nav {
         flex-direction: column;
         gap: 20px;
@@ -662,7 +711,6 @@ body {
     
     .hero {
         padding: 120px 0 80px;
-        text-align: center;
     }
     
     .hero h1 {
@@ -676,7 +724,6 @@ body {
     .hero-stats {
         flex-direction: column;
         gap: 30px;
-        text-align: center;
     }
     
     .hero-cta {
@@ -724,6 +771,14 @@ body {
 }
 
 @media (max-width: 480px) {
+    .hero-img {
+        height: 250px;
+    }
+    
+    .card-img {
+        height: 150px;
+    }
+    
     .container {
         padding: 0 15px;
     }
