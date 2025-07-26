@@ -104,28 +104,16 @@ body {
 }
 
 .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-}
-
-.hero-image {
-    position: relative;
-    z-index: 2;
-}
-
-.hero-img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    max-width: 800px;
 }
 
 .hero h1 {
@@ -238,27 +226,6 @@ body {
     margin-bottom: 20px;
     color: #1a1a1a;
     letter-spacing: -0.3px;
-}
-
-/* Card Images */
-.card-image {
-    margin-bottom: 24px;
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.card-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.overview-card:hover .card-img,
-.spec-card:hover .card-img,
-.diy-card:hover .card-img,
-.resource-card:hover .card-img {
-    transform: scale(1.05);
 }
 
 /* Cards - SunPower Style */
@@ -688,13 +655,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: center;
-    }
-    
-    .hero-img {
-        height: 300px;
+        flex-direction: column;
     }
     
     .nav {
@@ -771,14 +732,6 @@ body {
 }
 
 @media (max-width: 480px) {
-    .hero-img {
-        height: 250px;
-    }
-    
-    .card-img {
-        height: 150px;
-    }
-    
     .container {
         padding: 0 15px;
     }
